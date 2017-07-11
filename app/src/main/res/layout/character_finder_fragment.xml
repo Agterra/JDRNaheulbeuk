@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/caracteristicsFragment">
+
+    <TextView
+        android:id="@+id/helperTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/caracteristic_help"/>
+
+    <TextView
+        android:id="@+id/courageLabel"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/helperTextView"
+        android:layout_marginLeft="20dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Courage"
+        android:textAlignment="viewEnd"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:textColor="@color/colorBlack"/>
+
+    <EditText
+        android:id="@+id/courageText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/courageLabel"
+        android:layout_alignTop="@+id/courageLabel"
+        />
+
+    <TextView
+        android:id="@+id/intelligenceLabel"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/courageLabel"
+        android:layout_marginLeft="20dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Intelligence"
+        android:textAlignment="viewEnd"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:textColor="@color/colorBlack"/>
+
+    <EditText
+        android:id="@+id/intelligenceText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/intelligenceLabel"
+        android:layout_alignTop="@+id/intelligenceLabel"
+        />
+
+    <TextView
+        android:id="@+id/charismeLabel"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/intelligenceLabel"
+        android:layout_marginLeft="20dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Charisme"
+        android:textAlignment="viewEnd"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:textColor="@color/colorBlack"/>
+
+    <EditText
+        android:id="@+id/charismeText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/charismeLabel"
+        android:layout_alignTop="@+id/charismeLabel"
+        />
+
+    <TextView
+        android:id="@+id/adresseLabel"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/charismeLabel"
+        android:layout_marginLeft="20dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Adresse"
+        android:textAlignment="viewEnd"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:textColor="@color/colorBlack"/>
+
+    <EditText
+        android:id="@+id/adresseText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/adresseLabel"
+        android:layout_alignTop="@+id/adresseLabel"
+        />
+
+    <TextView
+        android:id="@+id/forceLabel"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/adresseLabel"
+        android:layout_marginLeft="20dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Force"
+        android:textAlignment="viewEnd"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:textColor="@color/colorBlack"/>
+
+    <EditText
+        android:id="@+id/forceText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/forceLabel"
+        android:layout_alignTop="@+id/forceLabel"
+        />
+
+    <Button
+        android:id="@+id/rollButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/forceText"
+        android:hint="Roll stats"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColorHint="@color/colorBlack"/>
+
+</RelativeLayout>

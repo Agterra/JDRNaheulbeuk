@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">JDRNaheulbeuk</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="character_possibilities">Race/Metier</string>
+    <string name="caracteristic_help">Remplissez les champs avec vos jets de caractéristiques</string>
+</resources>
