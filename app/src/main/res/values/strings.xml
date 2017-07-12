@@ -1,8 +1,14 @@
 <resources>
-    <string name="app_name">JDRNaheulbeuk</string>
+    <string name="app_name">A Naheulbeuk Story</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="character_possibilities">Race/Metier</string>
     <string name="caracteristic_help">Remplissez les champs avec vos jets de caractéristiques</string>
+    <string name="caracteristics">Caractéristiques</string>
+    <string name="inventory">Inventaire</string>
+    <string name="abilities">Compétences</string>
+    <string name="save_file_name">save_file</string>
+    <string name="inventory_save_file">inventory_file</string>
+    <string name="abilities_save_file">abilities_file</string>
 </resources>

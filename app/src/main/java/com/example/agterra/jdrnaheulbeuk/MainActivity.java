@@ -10,10 +10,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
+    private ArrayList<Fragment> fragmentViews;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -25,17 +31,21 @@ public class MainActivity extends AppCompatActivity {
 
             switch (item.getItemId()) {
 
-                case R.id.character_possibilities:
+                case R.id.navigation_caracteristics:
 
-                    selectedFragment = new CharacterFinderFragment();
-
-                    break;
-
-                case R.id.navigation_dashboard:
+                    selectedFragment = fragmentViews.get(0);
 
                     break;
 
-                case R.id.navigation_notifications:
+                case R.id.navigation_inventory:
+
+                    selectedFragment = fragmentViews.get(1);
+
+                    break;
+
+                case R.id.navigation_abilities:
+
+                    selectedFragment = fragmentViews.get(2);
 
                     break;
 
@@ -63,6 +73,18 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        System.out.println("test");
+
+        ArrayList<Fragment> fragmentViews = new ArrayList<>();
+
+        this.fragmentViews = fragmentViews;
+
+        fragmentViews.add(new CharacterFinderFragment());
+
+        fragmentViews.add(new InventoryFragment());
+
+        fragmentViews.add(new AbilitiesFragment());
 
         //Manually displaying the first fragment - one time only
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

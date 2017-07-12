@@ -20,9 +20,9 @@
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_gravity="bottom"
-        android:background="?android:attr/windowBackground"
+        android:background="@drawable/background_scroll"
         app:menu="@menu/navigation" />
 
 </LinearLayout>

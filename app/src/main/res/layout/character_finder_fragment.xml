@@ -1,136 +1,392 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/caracteristicsFragment">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/helperTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/caracteristic_help"/>
+    <RelativeLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/caracteristicsFragment">
 
-    <TextView
-        android:id="@+id/courageLabel"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/helperTextView"
-        android:layout_marginLeft="20dp"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="Courage"
-        android:textAlignment="viewEnd"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:textColor="@color/colorBlack"/>
+        <TextView
+            android:id="@+id/helperTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/caracteristic_help"
+            android:textStyle="italic"/>
 
-    <EditText
-        android:id="@+id/courageText"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@+id/courageLabel"
-        android:layout_alignTop="@+id/courageLabel"
-        />
+        <TextView
+            android:id="@+id/raceLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/helperTextView"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Race"
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            />
 
-    <TextView
-        android:id="@+id/intelligenceLabel"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/courageLabel"
-        android:layout_marginLeft="20dp"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="Intelligence"
-        android:textAlignment="viewEnd"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:textColor="@color/colorBlack"/>
+        <EditText
+            android:id="@+id/raceText"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/raceLabel"
+            android:layout_alignTop="@+id/raceLabel"
+            android:layout_marginLeft="20dp"
+            />
 
-    <EditText
-        android:id="@+id/intelligenceText"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@+id/intelligenceLabel"
-        android:layout_alignTop="@+id/intelligenceLabel"
-        />
+        <TextView
+            android:id="@+id/metierLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/helperTextView"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/raceText"
+            android:text="Métier"
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            />
 
-    <TextView
-        android:id="@+id/charismeLabel"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/intelligenceLabel"
-        android:layout_marginLeft="20dp"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="Charisme"
-        android:textAlignment="viewEnd"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:textColor="@color/colorBlack"/>
+        <EditText
+            android:id="@+id/metierText"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/metierLabel"
+            android:layout_alignTop="@+id/raceLabel"
+            android:layout_marginLeft="20dp"
+            />
 
-    <EditText
-        android:id="@+id/charismeText"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@+id/charismeLabel"
-        android:layout_alignTop="@+id/charismeLabel"
-        />
+        <View
+            android:id="@+id/separatorView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@id/metierText"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorBlack"/>
 
-    <TextView
-        android:id="@+id/adresseLabel"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/charismeLabel"
-        android:layout_marginLeft="20dp"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="Adresse"
-        android:textAlignment="viewEnd"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:textColor="@color/colorBlack"/>
+        <TextView
+            android:id="@+id/attackLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/separatorView"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:text="Attaque"
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            />
 
-    <EditText
-        android:id="@+id/adresseText"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@+id/adresseLabel"
-        android:layout_alignTop="@+id/adresseLabel"
-        />
+        <EditText
+            android:id="@+id/attackText"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/attackLabel"
+            android:layout_alignTop="@+id/attackLabel"
+            android:layout_marginLeft="20dp"
+            android:inputType="number"
+            />
 
-    <TextView
-        android:id="@+id/forceLabel"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/adresseLabel"
-        android:layout_marginLeft="20dp"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="Force"
-        android:textAlignment="viewEnd"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:textColor="@color/colorBlack"/>
+        <TextView
+            android:id="@+id/paradeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/separatorView"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/attackText"
+            android:text="Parade"
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            />
 
-    <EditText
-        android:id="@+id/forceText"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@+id/forceLabel"
-        android:layout_alignTop="@+id/forceLabel"
-        />
+        <EditText
+            android:id="@+id/paradeText"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/paradeLabel"
+            android:layout_alignTop="@+id/paradeLabel"
+            android:layout_marginLeft="20dp"
+            android:inputType="number"
+            />
 
-    <Button
-        android:id="@+id/rollButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/forceText"
-        android:hint="Roll stats"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:textColorHint="@color/colorBlack"/>
+        <View
+            android:id="@+id/secondSeparatorView"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignRight="@id/paradeText"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/attackText"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorBlack"/>
 
-</RelativeLayout>
+        <!-- Left column -->
+
+        <TextView
+            android:id="@+id/courageLabel"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/secondSeparatorView"
+            android:layout_marginLeft="20dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Courage"
+            android:textAlignment="viewEnd"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"/>
+
+        <EditText
+            android:id="@+id/courageText"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/courageLabel"
+            android:layout_alignTop="@+id/courageLabel"
+            android:inputType="number"
+            />
+
+        <TextView
+            android:id="@+id/intelligenceLabel"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/courageLabel"
+            android:layout_marginLeft="20dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Intelligence"
+            android:textAlignment="viewEnd"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"/>
+
+        <EditText
+            android:id="@+id/intelligenceText"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/intelligenceLabel"
+            android:layout_alignTop="@+id/intelligenceLabel"
+            android:inputType="number"
+            />
+
+        <TextView
+            android:id="@+id/charismeLabel"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/intelligenceLabel"
+            android:layout_marginLeft="20dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Charisme"
+            android:textAlignment="viewEnd"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"/>
+
+        <EditText
+            android:id="@+id/charismeText"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/charismeLabel"
+            android:layout_alignTop="@+id/charismeLabel"
+            android:inputType="number"
+            />
+
+        <TextView
+            android:id="@+id/adresseLabel"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/charismeLabel"
+            android:layout_marginLeft="20dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Adresse"
+            android:textAlignment="viewEnd"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"/>
+
+        <EditText
+            android:id="@+id/adresseText"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/adresseLabel"
+            android:layout_alignTop="@+id/adresseLabel"
+            android:inputType="number"
+            />
+
+        <TextView
+            android:id="@+id/forceLabel"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/adresseLabel"
+            android:layout_marginLeft="20dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Force"
+            android:textAlignment="viewEnd"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"/>
+
+        <EditText
+            android:id="@+id/forceText"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/forceLabel"
+            android:layout_alignTop="@+id/forceLabel"
+            android:inputType="number"
+            />
+
+        <!-- Right colum -->
+
+        <TextView
+            android:id="@+id/magicResistanceLabel"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/secondSeparatorView"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/magicResistanceText"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Résistance Magique"
+            android:textAlignment="viewEnd"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"/>
+
+        <EditText
+            android:id="@+id/magicResistanceText"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/magicResistanceLabel"
+            android:inputType="number"
+            />
+
+        <TextView
+            android:id="@+id/piercingReistanceLabel"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/magicResistanceLabel"
+            android:layout_alignLeft="@+id/magicResistanceLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Résistance Physique"
+            android:textAlignment="viewEnd"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"/>
+
+        <EditText
+            android:id="@+id/piercingResistanceText"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/piercingReistanceLabel"
+            android:layout_alignTop="@+id/piercingReistanceLabel"
+            android:inputType="number"
+            />
+
+        <TextView
+            android:id="@+id/lifePointLabel"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/piercingReistanceLabel"
+            android:layout_alignLeft="@+id/piercingReistanceLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Energie vitale"
+            android:textAlignment="viewEnd"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"/>
+
+        <EditText
+            android:id="@+id/lifePointText"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/lifePointLabel"
+            android:layout_alignTop="@+id/lifePointLabel"
+            android:inputType="number"
+            />
+
+        <TextView
+            android:id="@+id/otherEnergyLabel"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/lifePointLabel"
+            android:layout_alignLeft="@+id/lifePointLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Energie secondaire"
+            android:textAlignment="viewEnd"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/colorBlack"/>
+
+        <EditText
+            android:id="@+id/otherEnergyText"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/otherEnergyLabel"
+            android:layout_alignTop="@+id/otherEnergyLabel"
+            android:inputType="number"
+            />
+
+        <View
+            android:id="@+id/verticalSeparator"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/secondSeparatorView"
+            android:layout_alignTop="@+id/courageText"
+            android:layout_alignBottom="@+id/forceText"/>
+
+        <!-- Bottom
+
+        <Button
+            android:id="@+id/rollButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/forceText"
+            android:hint="Roll stats"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColorHint="@color/colorBlack"/>
+-->
+        <Button
+            android:id="@+id/raceSelection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Voir les classes et metiers disponibles"
+            android:textColorHint="@color/colorBlack"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@+id/validateButton"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/validateButton"
+            android:hint="Sauvegarder la fiche"
+            android:textColorHint="@color/colorBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/forceText"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
+    </RelativeLayout>
+
+</ScrollView>

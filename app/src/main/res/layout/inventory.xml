@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/goldLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/goldText"
+        android:layout_alignBottom="@+id/silverLabel"
+        android:textColor="@color/colorBlack"
+        android:text="Or:"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/goldText"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/silverLabel"
+        android:layout_alignBottom="@+id/silverText"
+        android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/silverLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/silverText"
+        android:layout_alignBottom="@+id/silverText"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/colorBlack"
+        android:text="Argent:"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/silverText"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:inputType="number"/>
+
+    <Button
+        android:id="@+id/addObject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="+"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textColorHint="@color/colorBlack"/>
+
+    <Button
+        android:id="@+id/removeObject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="-"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/addObject"
+        android:textColorHint="@color/colorBlack"/>
+
+    <View
+        android:id="@+id/separatorView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorBlack"
+        android:layout_below="@+id/addObject"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
+
+    <ListView
+        android:id="@+id/inventoryListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/separatorView"
+        android:layout_marginTop="20dp"/>
+
+
+
+</RelativeLayout>
