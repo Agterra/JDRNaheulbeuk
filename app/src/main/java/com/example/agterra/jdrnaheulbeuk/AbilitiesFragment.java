@@ -48,15 +48,25 @@ public class AbilitiesFragment extends Fragment {
 
         super.onActivityCreated(savedInstanceState);
 
-        final ArrayList<String> objects = new ArrayList<>();
+        final ArrayList<String> objects = loadObjects();
 
-        this.objects = objects;
+        if(objects == null)
+        {
+
+            this.objects = new ArrayList<>();
+
+        }
+        else {
+
+            this.objects = objects;
+
+        }
 
         final ArrayAdapter<String> adaptedOjects = new ArrayAdapter<String>(getActivity(), R.layout.fragment_abilityitem, R.id.object_text, objects);
 
         this.adaptedObjects = adaptedOjects;
 
-        ListView listView = (ListView)getView().findViewById(R.id.abilitiesListView);
+        ListView listView = getView().findViewById(R.id.abilitiesListView);
 
         listView.setAdapter(adaptedOjects);
 
@@ -92,7 +102,7 @@ public class AbilitiesFragment extends Fragment {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-                builder.setTitle("Nom de l'object");
+                builder.setTitle("Nom de la compétence");
 
                 final EditText input = new EditText(getActivity());
 
@@ -105,6 +115,8 @@ public class AbilitiesFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
 
                         objects.set(position, input.getText().toString());
+
+                        saveObjects(objects);
 
                     }
                 });
@@ -120,8 +132,6 @@ public class AbilitiesFragment extends Fragment {
 
                 builder.show();
 
-                System.out.println(objects);
-
                 adaptedOjects.notifyDataSetChanged();
 
             }
@@ -129,23 +139,49 @@ public class AbilitiesFragment extends Fragment {
 
     }
 
-    public void savePlayer(Player player)
+    public void addObject(String object)
+    {
+
+        this.objects.add(object);
+
+        saveObjects(this.objects);
+
+        this.adaptedObjects.notifyDataSetChanged();
+
+    }
+
+    public void removeLastObject()
+    {
+
+        if(this.objects.size()>0) {
+
+            this.objects.remove(this.objects.size() - 1);
+
+            saveObjects(this.objects);
+
+            this.adaptedObjects.notifyDataSetChanged();
+
+        }
+
+    }
+
+    public void saveObjects(ArrayList<String> objects)
     {
 
         try
         {
 
-            File saveFile = new File(getActivity().getFilesDir(), getActivity().getString(R.string.save_file_name));
+            File saveFile = new File(getActivity().getFilesDir(), getActivity().getString(R.string.abilities_save_file));
 
             FileOutputStream fileOutputStream = new FileOutputStream(saveFile);
 
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
-            objectOutputStream.writeObject(player);
+            objectOutputStream.writeObject(objects);
+
+            fileOutputStream.close();
 
             objectOutputStream.close();
-
-            Toast.makeText(getActivity(), "Fiche sauvegardée !", Toast.LENGTH_SHORT).show();
 
         }
         catch (Exception e)
@@ -159,23 +195,23 @@ public class AbilitiesFragment extends Fragment {
 
     }
 
-    public Player loadPlayer() {
+    public ArrayList<String> loadObjects() {
 
         try {
 
-            File saveFile = new File(getActivity().getFilesDir(), getActivity().getString(R.string.save_file_name));
+            File saveFile = new File(getActivity().getFilesDir(), getActivity().getString(R.string.abilities_save_file));
 
             FileInputStream fileInputStream = new FileInputStream(saveFile);
 
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
-            Player player = (Player)objectInputStream.readObject();
+            ArrayList objects = (ArrayList) objectInputStream.readObject();
 
             objectInputStream.close();
 
             fileInputStream.close();
 
-            return player;
+            return objects;
 
         } catch (Exception e) {
 
@@ -184,28 +220,6 @@ public class AbilitiesFragment extends Fragment {
         }
 
         return null;
-
-    }
-
-    public void addObject(String object)
-    {
-
-        this.objects.add(object);
-
-        this.adaptedObjects.notifyDataSetChanged();
-
-    }
-
-    public void removeLastObject()
-    {
-
-        if(this.objects.size()>0) {
-
-            this.objects.remove(this.objects.size() - 1);
-
-            this.adaptedObjects.notifyDataSetChanged();
-
-        }
 
     }
 

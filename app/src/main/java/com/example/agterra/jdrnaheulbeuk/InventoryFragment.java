@@ -49,15 +49,25 @@ public class InventoryFragment extends Fragment {
 
         super.onActivityCreated(savedInstanceState);
 
-        final ArrayList<String> objects = new ArrayList<>();
+        final ArrayList<String> objects = loadObjects();
 
-        this.objects = objects;
+        if(objects == null)
+        {
+
+            this.objects = new ArrayList<>();
+
+        }
+        else {
+
+            this.objects = objects;
+
+        }
 
         final ArrayAdapter<String> adaptedOjects = new ArrayAdapter<String>(getActivity(), R.layout.inventory_cell, R.id.object_text, objects);
 
         this.adaptedObjects = adaptedOjects;
 
-        ListView listView = (ListView)getView().findViewById(R.id.inventoryListView);
+        ListView listView = getView().findViewById(R.id.inventoryListView);
 
         listView.setAdapter(adaptedOjects);
 
@@ -107,6 +117,10 @@ public class InventoryFragment extends Fragment {
 
                         objects.set(position, input.getText().toString());
 
+                        saveObjects(objects);
+
+                        System.out.println(objects);
+
                     }
                 });
 
@@ -120,8 +134,6 @@ public class InventoryFragment extends Fragment {
                 });
 
                 builder.show();
-
-                saveObjects(objects);
 
                 adaptedOjects.notifyDataSetChanged();
 
@@ -198,21 +210,6 @@ public class InventoryFragment extends Fragment {
 
         }
 
-        ArrayList loadedObjects = loadObjects();
-
-        if(loadedObjects != null)
-        {
-
-            System.out.println(loadedObjects);
-
-            this.objects = loadedObjects;
-
-            this.adaptedObjects = new ArrayAdapter<String>(getActivity(), R.layout.inventory_cell, R.id.object_text, objects);
-
-            this.adaptedObjects.notifyDataSetChanged();
-
-        }
-
     }
 
     public void addObject(String object)
@@ -220,9 +217,11 @@ public class InventoryFragment extends Fragment {
 
         this.objects.add(object);
 
-        this.adaptedObjects.notifyDataSetChanged();
-
         saveObjects(this.objects);
+
+        System.out.println(this.objects);
+
+        this.adaptedObjects.notifyDataSetChanged();
 
     }
 
@@ -233,9 +232,9 @@ public class InventoryFragment extends Fragment {
 
             this.objects.remove(this.objects.size() - 1);
 
-            this.adaptedObjects.notifyDataSetChanged();
-
             saveObjects(this.objects);
+
+            this.adaptedObjects.notifyDataSetChanged();
 
         }
 
@@ -299,7 +298,7 @@ public class InventoryFragment extends Fragment {
 
     }
 
-    public void saveObjects(ArrayList objects)
+    public void saveObjects(ArrayList<String> objects)
     {
 
         try
@@ -329,7 +328,7 @@ public class InventoryFragment extends Fragment {
 
     }
 
-    public ArrayList loadObjects() {
+    public ArrayList<String> loadObjects() {
 
         try {
 
